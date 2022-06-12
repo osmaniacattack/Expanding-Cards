@@ -57,6 +57,7 @@ body {
 /* Active panel will display text */
 .panel.active h3 {
   opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
 }
 
 /* If viewport width < 480px hide the 4th and 5th panel and use the full size of the screen*/
