@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* Aligns and justifies content in the center of the viewport */
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Flex container so that card panels fall in a row by default */
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+/* Panels stylized to enlarge size of card, add transition, and position image and text*/
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+/* Panels that are inactive will not show text */
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+/* Active panel will take up more room */
+.panel.active {
+  flex: 5;
+}
+
+/* Active panel will display text */
+.panel.active h3 {
+  opacity: 1;
+}
+
+/* If viewport width < 480px hide the 4th and 5th panel and use the full size of the screen*/
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
